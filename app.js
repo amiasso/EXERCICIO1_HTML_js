@@ -1,22 +1,24 @@
 
-const form = document.getElementById('comparar');
+const btn = document.querySelector("#send");
 
-function validar(){
-var valida = parseInt(validar)
-var numero = comparar.numeroA.value;
-var repetirNumero = comparar.numeroB.value;
+btn.addEventListener("click",function(e){
+    e.preventDefault();
 
-if(numero > 5){
-    alert(" No campo A, coloque um numero menor ou igual a 5");
-        comparar.repetirNumero.focus();
-}else if(repetirNumero > 10){
-    alert("No campo B, digite um numero entre 5 e 10");
+    const name =document.querySelector("#numeroA");
+
+    const value = name.value;
+    var numberA =parseInt(value);
+
+    const nameB =document.querySelector("#numeroB");
+
+    const valueB = nameB.value;
+    var numberB = parseInt(valueB);
+
+    if(numberA >= numberB ){
+        alert('No campo "A" o numero tem que ser menor que o do campo "B" ');
+}else if(numberB <= numberA){
+    alert('No campo "B" o numero tem que ser maior que o do campo "A" ');
 }else{
-    alert("seu numero é valido");
+    alert('numero valido!!!');
 }
-}
-    
-    
-
-
-
+})
